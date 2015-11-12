@@ -1,7 +1,8 @@
-﻿Portable version of devicehive server which can be run on armhf or x86_64 machine.
-Doesn't require anything to install on target machine. Just run ./start.sh in _build dir and have fun!
+﻿Portable version of the DeviceHive server which can be run on armhf or x86_64 machine.
 
-#Dependencies:
+No installation required on the target machine as long as the server is built.
+
+#Dependencies
 sudo apt-get install libc6-dev-armhf-cross cpp-arm-linux-gnueabihf gcc-arm-linux-gnueabihf zlib1g-dev zlib1g-dev:armhf
 
 There is might be a need to install zlib1g-dev:armhf manually if you need armhf support. To do it, type:
@@ -19,19 +20,24 @@ cp tmp.mkf Makefile -f
 make -j 8 && sudo make install
 ```
 
-#Building
+# Building
 Install dependencies and run:  
 ./build.sh  
 If you don't need armhf support:  
 ./build.sh --noarm  
 
-#Usage
-After server start, REST endpoint will be aviable at http://127.0.0.1:8080/dh/rest  
-You can check info here - http://127.0.0.1:8080/dh/rest/info  
-Admin console aviable at - http://127.0.0.1:8000  
+# Usage
+### Starting
+To start the server run _build/start.sh
+### Stoping
+killall python java postgres -9
+
+Hope nothing started on your system with the same names :)
+
+### Useful Info
+REST endpoint - http://127.0.0.1:8080/dh/rest  
+API Info - http://127.0.0.1:8080/dh/rest/info  
+Admin console - http://127.0.0.1:8000  
+
 Login: dhadmin  
 Password: dhadmin_#911
-
-#Terminated server
-killall python java postgres -9
-Hope nothing started on your system with the same names :)
