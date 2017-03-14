@@ -2,10 +2,10 @@
 
 No installation required on the target machine as long as the server is built.
 
-#Dependencies
-sudo apt-get install libc6-dev-armhf-cross cpp-arm-linux-gnueabihf gcc-arm-linux-gnueabihf zlib1g-dev zlib1g-dev:armhf
+# Dependencies
+`sudo apt-get install libc6-dev-armhf-cross cpp-arm-linux-gnueabihf gcc-arm-linux-gnueabihf zlib1g-dev zlib1g-dev:armhf`
 
-There is might be a need to install zlib1g-dev:armhf manually if you need armhf support. To do it, type:
+There might be a need to install zlib1g-dev:armhf manually if you need armhf support. To do it, type:
 ```bash
 wget http://zlib.net/zlib-1.2.8.tar.gz
 tar xzf zlib-1.2.8.tar.gz
@@ -21,23 +21,23 @@ make -j 8 && sudo make install
 ```
 
 # Building
-Install dependencies and run:  
-./build.sh  
-If you don't need armhf support:  
-./build.sh --noarm  
+Install dependencies and run:
+`./build.sh`
+If you don't need armhf support:
+`./build.sh --noarm`
 
 # Usage
 ### Starting
-To start the server run _build/start.sh
-### Stoping
-killall python java postgres -9
+`_build/start.sh`
+### Stopping
+`killall python java postgres -9`
 
-Hope nothing started on your system with the same names :)
+(Be careful, this command will kill all the processes with those names on your system)
 
 ### Useful Info
-REST endpoint - http://127.0.0.1:8080/dh/rest  
-API Info - http://127.0.0.1:8080/dh/rest/info  
-Admin console - http://127.0.0.1:8000  
+REST endpoint - http://127.0.0.1:8080/dh/rest
+API Info - http://127.0.0.1:8080/dh/rest/info
+Admin console - http://127.0.0.1:8000
 
-Login: dhadmin  
+Login: dhadmin
 Password: dhadmin_#911
