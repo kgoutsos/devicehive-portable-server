@@ -42,12 +42,12 @@ function mk_postgre() {
 }
 
 function mk_java() {
-    download http://http.us.debian.org/debian/pool/main/o/openjdk-8/openjdk-8-jre_8u72-b05-6_$1.deb
-    download http://http.us.debian.org/debian/pool/main/o/openjdk-8/openjdk-8-jre-jamvm_8u72-b05-6_$1.deb
-    download http://http.us.debian.org/debian/pool/main/o/openjdk-8/openjdk-8-jre-headless_8u72-b05-6_$1.deb
-    dpkg -x $CACHEDIR/openjdk-8-jre_8u72-b05-6_$1.deb $CACHEDIR/java-$2
-    dpkg -x $CACHEDIR/openjdk-8-jre-jamvm_8u72-b05-6_$1.deb $CACHEDIR/java-$2
-    dpkg -x $CACHEDIR/openjdk-8-jre-headless_8u72-b05-6_$1.deb $CACHEDIR/java-$2
+    download http://http.us.debian.org/debian/pool/main/o/openjdk-8/openjdk-8-jre_8u121-b13-3_$1.deb
+    download http://http.us.debian.org/debian/pool/main/o/openjdk-8/openjdk-8-jre-jamvm_8u121-b13-1~bpo8+1_$1.deb
+    download http://http.us.debian.org/debian/pool/main/o/openjdk-8/openjdk-8-jre-headless_8u121-b13-3_$1.deb
+    dpkg -x $CACHEDIR/openjdk-8-jre_8u121-b13-3_$1.deb $CACHEDIR/java-$2
+    dpkg -x $CACHEDIR/openjdk-8-jre-jamvm_8u121-b13-1~bpo8+1_$1.deb $CACHEDIR/java-$2
+    dpkg -x $CACHEDIR/openjdk-8-jre-headless_8u121-b13-3_$1.deb $CACHEDIR/java-$2
     cp $CACHEDIR/java-$2/etc/java-8-openjdk/* $CACHEDIR/java-$2/usr/lib/jvm/java-8-openjdk-$1/jre/lib/ -r --remove-destination
     cp $CACHEDIR/java-$2/etc/java-8-openjdk/jvm-$1.cfg $CACHEDIR/java-$2/usr/lib/jvm/java-8-openjdk-$1/jre/lib/$3/jvm.cfg --remove-destination
     mkdir -p $BUILDDIR/java-$2
